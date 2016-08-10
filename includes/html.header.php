@@ -23,6 +23,9 @@
     <link rel="stylesheet" src="<?= SITE_URL; ?>css/style-xlarge.css" />
   </noscript>
   <!--[if lte IE 8]><link rel="stylesheet" src="<?= SITE_URL; ?>css/ie/v8.css" /><![endif]-->
+
+
+  <link rel="stylesheet" type="text/css" href="<?= SITE_URL; ?>css/less.css">
 </head>
 <body>
 <div id="wrapper">
@@ -32,7 +35,7 @@
     <header>
       <span class="image avatar"><img src="<?= SITE_URL; ?>images/avatar.jpg" alt="" /></span>
       <h1 id="logo"><a href="#">Olá visitante</a></h1>
-      <p>Você ainda não está identificado.</p>
+      <p><a href="<?= SITE_URL?>login">Clique aqui</a> e faça seu login.</p>
     </header>
     <nav id="nav">
       <ul>
