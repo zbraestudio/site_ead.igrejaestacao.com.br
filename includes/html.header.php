@@ -1,3 +1,7 @@
+<?
+$page = GetPage();
+$logado = login_verify();
+?>
 <!DOCTYPE HTML>
 <!--
 	Read Only by HTML5 UP
@@ -32,19 +36,72 @@
 
   <!-- Header -->
   <section id="header" class="skel-layers-fixed">
-    <header>
-      <span class="image avatar"><img src="<?= SITE_URL; ?>images/avatar.jpg" alt="" /></span>
-      <h1 id="logo"><a href="#">Olá visitante</a></h1>
-      <p><a href="<?= SITE_URL?>login">Clique aqui</a> e faça seu login.</p>
-    </header>
-    <nav id="nav">
-      <ul>
-        <li><a href="#one" class="active">Bem vindo</a></li>
-        <li><a href="#two">Quem pode participar</a></li>
-        <li><a href="#three">Cursos </a></li>
-        <li><a href="#four">Contato</a></li>
-      </ul>
-    </nav>
+
+    <?
+    if(!$logado) {
+      ?>
+      <header>
+        <span class="image avatar"><img src="<?= SITE_URL; ?>images/avatar.jpg" alt=""/></span>
+
+        <h1 id="logo"><a href="#">Olá visitante</a></h1>
+
+        <p><a href="<?= SITE_URL ?>login">Clique aqui</a> e faça seu login.</p>
+      </header>
+      <?
+    } else {
+      ?>
+      <header>
+        <span class="image avatar"><img src="<?= SITE_URL; ?>images/avatar.jpg" alt=""/></span>
+
+        <h1 id="logo"><a href="#">Olá Tiago</a></h1>
+
+        <p><a href="<?= SITE_URL ?>login">Clique aqui</a> e faça seu login.</p>
+      </header>
+      <?
+    }
+    ?>
+
+    <?
+
+    if(!$logado){
+
+      if($page == 'home.php'){
+        ?>
+        <nav id="nav">
+          <ul>
+            <li><a href="#one" class="active">Bem vindo</a></li>
+            <li><a href="#two">Quem pode participar</a></li>
+            <li><a href="#three">Cursos </a></li>
+            <li><a href="#four">Contato</a></li>
+          </ul>
+        </nav>
+        <?
+
+      } else if($page == 'login.php') {
+        ?>
+        <nav id="nav">
+          <ul>
+            <li><a href="<?= SITE_URL; ?>home" >Home</a></li>
+            <li><a href="#one"class="active">Login</a></li>
+          </ul>
+        </nav>
+        <?
+      }
+
+    } else {
+      ?>
+      <nav id="nav">
+        <ul>
+          <li><a href="#one" class="active">Homexxx</a></li>
+          <li><a href="#two">Login</a></li>
+        </ul>
+      </nav>
+      <?
+    }
+    ?>
+
+
+
     <footer>
       <ul class="icons">
         <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
