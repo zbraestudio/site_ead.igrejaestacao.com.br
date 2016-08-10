@@ -13,6 +13,7 @@ if(login($email, $senha)){
   header('LOCATION:' . SITE_URL . 'perfil');
 
 } else {
-  die('erro');
+  $_SESSION['ead_login_erro'] = 'Ops! Ocorreu um erro ao tentar fazer seu login';
+  header('LOCATION:' . SITE_URL . 'login');
 }
 ?>

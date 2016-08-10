@@ -14,6 +14,14 @@ html_header();
         <p>Faça abaixo seu login.</p>
       </header>
 
+      <?
+      if(!empty(@$_SESSION['ead_login_erro'])){
+
+        echo('<div class="alert">' . $_SESSION['ead_login_erro'] . '</div>');
+        $_SESSION['ead_login_erro'] = null;
+      }
+      ?>
+
       <form id="login" action="<?= SITE_URL; ?>script/login" method="post">
       <p>Faucibus sed lobortis aliquam lorem blandit. Lorem eu nunc metus col. Commodo id in arcu ante lorem ipsum sed accumsan erat praesent faucibus commodo ac mi lacus. Adipiscing mi ac commodo. Vis aliquet tortor ultricies non ante erat nunc integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum.</p>
         <input type="email" name="email" placeholder="Seu e-mail" required="">
