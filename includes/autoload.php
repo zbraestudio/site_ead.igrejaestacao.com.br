@@ -1,4 +1,6 @@
 <?
+session_start();
+
 include('config.php');
 include('functions.php');
 include('girafa.db.php');

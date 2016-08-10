@@ -1,6 +1,18 @@
 <?
+
+include('../includes/autoload.php');
+
+
 $email = $_POST['email'];
 $senha = $_POST['senha'];
 
-print_r($_POST);exit;
+$senha = md5($senha);
+
+if(login($email, $senha)){
+
+  header('LOCATION:' . SITE_URL . 'perfil');
+
+} else {
+  die('erro');
+}
 ?>

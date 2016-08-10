@@ -15,8 +15,51 @@ function GetPage(){
 }
 
 
-function login_verify(){
+function log_verify(){
   return false;
+}
+
+function login($mail, $pass){
+  global $db;
+  $sql  = "SELECT * FROM Membros WHERE Email = '$mail' AND Senha = '$pass'";
+  $res = $db->LoadObjects($sql);
+
+  if(count($res) > 0){
+
+    $reg = $res[0];
+    $_SESSION['ead_log_id']         = $reg->ID;
+    $_SESSION['ead_log_email']      = $reg->Email;
+    $_SESSION['ead_log_nome']       = $reg->Nome;
+    $_SESSION['ead_log_apelido']    = $reg->Apelido;
+
+    return true;
+  } else {
+    return false;
+  }
+
+}
+
+function logout(){
+  $_SESSION['ead_log_id']         = null;
+  $_SESSION['ead_log_email']      = null;
+  $_SESSION['ead_log_nome']       = null;
+  $_SESSION['ead_log_apelido']    = null;
+
+  header('LOCATION: ' . SITE_URL . 'home');
+}
+
+/* Funções do Perfil */
+function perfil_id(){
+  return @$_SESSION['ead_log_id'];
+}
+function perfil_email(){
+  return @$_SESSION['ead_log_email'];
+}
+function perfil_nome(){
+  return @$_SESSION['ead_log_nome'];
+}
+function perfil_apelido(){
+  return @$_SESSION['ead_log_apelido'];
 }
 
 ?>

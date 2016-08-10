@@ -1,6 +1,6 @@
 <?
 $page = GetPage();
-$logado = login_verify();
+$logado = log_verify();
 ?>
 <!DOCTYPE HTML>
 <!--
