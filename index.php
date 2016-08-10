@@ -2,6 +2,9 @@
 include('includes/autoload.php');
 html_header();
 ?>
+
+
+
   <!-- Main -->
   <div id="main">
 
@@ -9,9 +12,8 @@ html_header();
     <section id="one">
       <div class="container">
         <header class="major">
-          <h2>Read Only</h2>
-          <p>Just an incredibly simple responsive site<br />
-            template freebie by <a href="http://html5up.net">HTML5 UP</a>.</p>
+          <h2>Bem vindo ao EAD LIVRE</h2>
+          <p>Essa é nossa plataforma de ensino à distância. </p>
         </header>
         <p>Faucibus sed lobortis aliquam lorem blandit. Lorem eu nunc metus col. Commodo id in arcu ante lorem ipsum sed accumsan erat praesent faucibus commodo ac mi lacus. Adipiscing mi ac commodo. Vis aliquet tortor ultricies non ante erat nunc integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum.</p>
       </div>
@@ -20,7 +22,7 @@ html_header();
     <!-- Two -->
     <section id="two">
       <div class="container">
-        <h3>Things I Can Do</h3>
+        <h3>O que eu preciso para participar?</h3>
         <p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer lorem ipsum dolor sit amet.</p>
         <ul class="feature-icons">
           <li class="fa-code">Write all the code</li>
@@ -36,8 +38,9 @@ html_header();
     <!-- Three -->
     <section id="three">
       <div class="container">
-        <h3>A Few Accomplishments</h3>
-        <p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
+        <h3>Cursos Disponíveis</h3>
+        <p>Veja abaixo quais são os cursos que já estão disponíveis pra você. <br>
+          Aproveite e faça sua inscrição agora mesmo.</p>
         <div class="features">
           <article>
             <a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
@@ -67,7 +70,7 @@ html_header();
     <!-- Four -->
     <section id="four">
       <div class="container">
-        <h3>Contact Me</h3>
+        <h3>Contato</h3>
         <p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
         <form method="post" action="#">
           <div class="row uniform collapse-at-2">
