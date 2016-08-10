@@ -53,9 +53,9 @@ $logado = log_verify();
       <header>
         <span class="image avatar"><img src="<?= SITE_URL; ?>images/avatar.jpg" alt=""/></span>
 
-        <h1 id="logo"><a href="#">Olá Tiago</a></h1>
+        <h1 id="logo"><a href="#">Olá <?= perfil_apelido(); ?></a></h1>
 
-        <p><a href="<?= SITE_URL ?>login">Clique aqui</a> e faça seu login.</p>
+        <p><a href="<?= SITE_URL ?>script/logout">Sair</a></p>
       </header>
       <?
     }
@@ -92,7 +92,7 @@ $logado = log_verify();
       ?>
       <nav id="nav">
         <ul>
-          <li><a href="#one" class="active">Homexxx</a></li>
+          <li><a href="#one" class="active">Perfil</a></li>
           <li><a href="#two">Login</a></li>
         </ul>
       </nav>

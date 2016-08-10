@@ -16,6 +16,10 @@ function GetPage(){
 
 
 function log_verify(){
+  if(isset($_SESSION['ead_log_id']))
+    if(!empty($_SESSION['ead_log_id']))
+      return true;
+
   return false;
 }
 
