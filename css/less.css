@@ -1,3 +1,19 @@
+@media screen and (max-width: 736px) {
+  .onMobile {
+    display: block;
+  }
+  .offMobile {
+    display: none;
+  }
+}
+@media screen and (min-width: 737px) {
+  .onMobile {
+    display: none;
+  }
+  .offMobile {
+    display: block;
+  }
+}
 form#login input {
   margin: 15px 0;
 }
@@ -14,12 +30,23 @@ form#login input {
   width: 48%;
   float: left;
 }
+@media screen and (max-width: 736px) {
+  .cursos .col1 {
+    width: 100%;
+    float: none;
+  }
+}
 .cursos .col1 .image {
   width: 100%;
 }
 .cursos .col2 {
   width: 50%;
   float: left;
+}
+.cursos .col2 p {
+  font-size: 14px;
+  line-height: 23px;
+  margin-bottom: 15px;
 }
 .cursos .ficha {
   margin-left: 25px;

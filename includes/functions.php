@@ -14,7 +14,15 @@ function GetPage(){
   return $page;
 }
 
+function nl2p($string)
+{
+  $string = str_replace(array('<p>', '</p>', '<br>', '<br />'), '', $string);
 
+    return '<p>'.preg_replace("/([\n]{1,})/i", "</p>\n<p>", trim($string)).'</p>';
+}
+
+
+/* Login */
 function log_verify(){
   if(isset($_SESSION['ead_log_id']))
     if(!empty($_SESSION['ead_log_id']))
@@ -52,7 +60,7 @@ function logout(){
   header('LOCATION: ' . SITE_URL . 'home');
 }
 
-/* Funções do Perfil */
+/* FunÃ§Ãµes do Perfil */
 function perfil_id(){
   return @$_SESSION['ead_log_id'];
 }

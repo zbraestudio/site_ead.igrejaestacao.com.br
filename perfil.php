@@ -33,22 +33,24 @@ html_header();
             <article>
 
               <div class="col1">
+
+                <h4 class="onMobile"><?= $curso->Nome; ?></h4>
                 <a href="#" class="image"><img src="<?= UPLOADS_URL . $curso->Capa; ?>" alt=""/></a>
 
                 <ul class="ficha">
-                  <li><strong>Professor:</strong> Tihh Gonçalves</li>
-                  <li><strong>Sua situação:</strong> Inscrito</li>
-                  <li><strong>Aulas:</strong> 10</li>
-                  <li><strong>Duração:</strong> Previsão de 2 meses</li>
+                  <li><strong>Professor:</strong> Tihh Gonçalves.</li>
+                  <li><strong>Sua situação:</strong> Inscrito.</li>
+                  <li><strong>Aulas:</strong> 10.</li>
+                  <li><strong>Duração:</strong> Previsão de 2 meses.</li>
                 </ul>
 
               </div>
 
 
               <div class="inner col2">
-                <h4><?= $curso->Nome; ?></h4>
+                <h4 class="offMobile"><?= $curso->Nome; ?></h4>
 
-                <p><?= $curso->DescricaoCurta; ?></p>
+                <p><?=  nl2p($curso->DescricaoCurta); ?></p>
               </div>
             </article>
             <?

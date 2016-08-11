@@ -1,3 +1,21 @@
+@media screen and (max-width: 736px) {
+  .onMobile{
+    display: block;
+  }
+  .offMobile{
+    display: none;
+  }
+}
+@media screen and (min-width: 737px) {
+  .onMobile{
+    display: none;
+  }
+  .offMobile{
+    display: block;
+  }
+}
+
+
 form#login{
   input{
     margin: 15px 0;
@@ -22,6 +40,11 @@ form#login{
     width: 48%;
     float: left;
 
+    @media screen and (max-width: 736px) {
+      width: 100%;
+      float: none;
+    }
+
     .image{
       width: 100%;
     }
@@ -30,6 +53,12 @@ form#login{
   .col2{
     width: 50%;
     float: left;
+
+    p{
+      font-size: 14px;
+      line-height: 23px;
+      margin-bottom: 15px;
+    }
   }
 
   .ficha{
