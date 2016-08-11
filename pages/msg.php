@@ -1,6 +1,4 @@
 <?
-include('includes/autoload.php');
-
 if(!isset($_SESSION['ead_msg']))
   header('LOCATION: ' . SITE_URL);
 

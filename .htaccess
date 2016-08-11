@@ -1,8 +1,9 @@
-<IfModule mod_rewrite.c>
+#LINK AMIGÁVEL
 RewriteEngine On
-RewriteBase /
-RewriteRule ^index\.php$ - [L]
+
+#Regras: se não existir arquivo ou diretório com o endereço fornecido
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([a-z-_0-9]+)\/?$ ./$1.php [NC,L]
-</IfModule>
+
+#Reescrever URL, adicionando o query string
+RewriteRule ^(.*) ./index.php?url=$1 [QSA]

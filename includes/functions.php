@@ -7,11 +7,22 @@ function html_footer(){
   include('html.footer.php');
 }
 
-function GetPage(){
-  $page =  $_SERVER['PHP_SELF'];
-  $page = explode("/",$page);
-  $page = end($page);
+function GetPage()
+{
+  global $params;
+  $page = $params[0] . '.php';
   return $page;
+}
+
+function GetParamsArray(){
+  global $params;
+
+  if(count($params) >= 1)
+    return array_shift($params);
+  else {
+    return null;
+  }
+
 }
 
 function nl2p($string)
