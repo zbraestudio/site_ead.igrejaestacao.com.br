@@ -18,7 +18,7 @@ html_header();
 
         $sql  = 'SELECT Cursos.* FROM CursoAlunos';
         $sql .= ' JOIN Cursos ON(Cursos.ID = CursoAlunos.Curso)';
-        $sql .= " WHERE CursoAlunos.Aluno = 3 AND CursoAlunos.Situacao = 'ATV'";
+        $sql .= " WHERE CursoAlunos.Situacao = 'ATV' AND CursoAlunos.Aluno = " . perfil_id();
         $cursos = $db->LoadObjects($sql);
 
         if(count($cursos) > 0){

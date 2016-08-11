@@ -6,15 +6,15 @@ if( $_SERVER['HTTP_HOST'] == 'localhost'){
   define('SITE_URL'         , 'http://localhost/github/site_ead.livresweb.com/');
   define('SITE_PATH'        , 'D:/githubgithub/site_ead.livresweb.com/');
 
-  define('UPLOADS_URL'      , 'http://http.nbz.net.br/livresweb.com/sistema/uploads/');
+  define('UPLOADS_URL'      , 'http://localhost/github/site_sistema.livresweb.com/uploads/');
   define('UPLOADS_PATH'     , 'D:/githubgithub/site_sistema.livresweb.com/uploads/');
 
 } else {
-  define('SITE_URL'         , '');
-  define('SITE_PATH'        , '');
+  define('SITE_URL'         , 'http://ead.livresweb.com/');
+  define('SITE_PATH'        , '/dados/http/livresweb.com/ead/');
 
-  define('UPLOADS_URL'      , '');
-  define('UPLOADS_PATH'     , '');
+  define('UPLOADS_URL'      , 'http://sistema.livresweb.com/uploads/');
+  define('UPLOADS_PATH'     , '/dados/http/livresweb.com/sistema/uploads/');
 
 }
 
