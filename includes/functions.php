@@ -74,4 +74,63 @@ function perfil_apelido(){
   return @$_SESSION['ead_log_apelido'];
 }
 
+
+
+/* Funções de Cursos */
+
+
+function curso_getTotalAulas($curso){
+  global $db;
+
+  $sql  = 'SELECT COUNT(ID) TOTAL FROM CursoModuloAulas WHERE Modulo IN(SELECT ID FROM CursoModulos WHERE Curso = ' . $curso . ')';
+  $total = $db->LoadObjects($sql);
+  $total = $total[0];
+  $total = intval($total->TOTAL);
+  return $total;
+}
+
+function curso_getDuracaoPrevista($aulas){
+  /* Médias de 1 aula por semana */
+
+  /* mês = 4 semanas */
+  /* ano = 12 meses */
+
+  $semanas = $aulas;
+
+  if($semanas < 4)
+    return $semanas . ' semana(s)';
+  else {
+    $meses = 0;
+    $anos = 0;
+
+    $divisao = ($semanas / 4);
+    $meses = floor($divisao);
+    $semanas = ($semanas - ($meses * 4));
+
+    if($meses >= 12){
+      $divisao = ($meses / 12);
+      $anos = floor($divisao);
+      $meses = ($meses - ($anos * 12));
+
+    }
+
+    $return = array();
+
+    if($anos > 0)
+      $return[] = $anos . ' anos(s)';
+
+    if($meses > 0)
+      $return[] = $meses . ' mes(es)';
+
+    if($semanas > 0)
+      $return[] = $semanas . ' semana(s)';
+
+
+    return implode(', ', $return);
+  }
+
+
+
+}
+
 ?>

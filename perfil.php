@@ -16,8 +16,9 @@ html_header();
 
         <?
 
-        $sql  = 'SELECT Cursos.* FROM CursoAlunos';
+        $sql  = 'SELECT Cursos.*, Membros.Nome ProfessorNome FROM CursoAlunos';
         $sql .= ' JOIN Cursos ON(Cursos.ID = CursoAlunos.Curso)';
+        $sql .= ' JOIN Membros ON(Membros.ID = Cursos.Professor)';
         $sql .= " WHERE CursoAlunos.Situacao = 'ATV' AND CursoAlunos.Aluno = " . perfil_id();
         $cursos = $db->LoadObjects($sql);
 
@@ -38,10 +39,14 @@ html_header();
                 <a href="#" class="image"><img src="<?= UPLOADS_URL . $curso->Capa; ?>" alt=""/></a>
 
                 <ul class="ficha">
-                  <li><strong>Professor:</strong> Tihh Gonçalves.</li>
+                  <li><strong>Professor:</strong><?= $curso->ProfessorNome; ?>.</li>
                   <li><strong>Sua situação:</strong> Inscrito.</li>
-                  <li><strong>Aulas:</strong> 10.</li>
-                  <li><strong>Duração:</strong> Previsão de 2 meses.</li>
+
+                  <?
+                    $total_aulas = curso_getTotalAulas($curso->ID);
+                  ?>
+                  <li><strong>Aulas:</strong> <?= $total_aulas; ?>.</li>
+                  <li><strong>Duração:</strong> Previsão de <?= curso_getDuracaoPrevista(21); ?>.</li>
                 </ul>
 
               </div>
