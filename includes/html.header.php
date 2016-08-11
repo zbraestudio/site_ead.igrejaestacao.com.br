@@ -10,11 +10,15 @@ $logado = log_verify();
 -->
 <html>
 <head>
-  <title>Read Only by HTML5 UP</title>
+  <title>EaD LIVRE // Educação</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+
+  <script>
+    var SITE_URL = '<?= SITE_URL; ?>';
+  </script>
   <script src="<?= SITE_URL; ?>js/jquery.min.js"></script>
   <script src="<?= SITE_URL; ?>js/jquery.scrollzer.min.js"></script>
   <script src="<?= SITE_URL; ?>js/jquery.scrolly.min.js"></script>
@@ -23,13 +27,11 @@ $logado = log_verify();
   <script src="<?= SITE_URL; ?>js/init.js"></script>
   <noscript>
     <link rel="stylesheet" src="<?= SITE_URL; ?>css/skel.css" />
-    <link rel="stylesheet" src="<?= SITE_URL; ?>css/style.css" />
+    <link rel="stylesheet" src="<?= SITE_URL; ?>css/less.css" />
     <link rel="stylesheet" src="<?= SITE_URL; ?>css/style-xlarge.css" />
   </noscript>
   <!--[if lte IE 8]><link rel="stylesheet" src="<?= SITE_URL; ?>css/ie/v8.css" /><![endif]-->
 
-
-  <link rel="stylesheet" type="text/css" href="<?= SITE_URL; ?>css/less.css">
 </head>
 <body>
 <div id="wrapper">
