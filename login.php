@@ -15,10 +15,10 @@ html_header();
       </header>
 
       <?
-      if(!empty(@$_SESSION['ead_login_erro'])){
+      if(!empty(@$_SESSION['ead_msg'])){
 
-        echo('<div class="alert">' . $_SESSION['ead_login_erro'] . '</div>');
-        $_SESSION['ead_login_erro'] = null;
+        echo('<div class="alert">' . $_SESSION['ead_msg'] . '</div>');
+        $_SESSION['ead_msg'] = null;
       }
       ?>
 

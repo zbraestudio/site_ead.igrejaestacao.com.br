@@ -1,6 +1,9 @@
 <?
 include('./includes/autoload.php');
 
+if(!log_verifyPage())
+  goPageMessage('Você não pode acessar a página de um Curso sem ter feito seu login antes.', 'login');
+
 html_header();
 ?>
   <!-- Main -->

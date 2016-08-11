@@ -60,6 +60,17 @@ function logout(){
   header('LOCATION: ' . SITE_URL . 'home');
 }
 
+function log_verifyPage(){
+
+  //se for uma página de acesso anonimo..
+  $anonimo = array('home.php', 'login.php');
+  if(in_array(GetPage(), $anonimo))
+    return true;
+
+  //verifica se está logado..
+  return (log_verify());
+}
+
 /* Funções do Perfil */
 function perfil_id(){
   return @$_SESSION['ead_log_id'];
@@ -72,6 +83,11 @@ function perfil_nome(){
 }
 function perfil_apelido(){
   return @$_SESSION['ead_log_apelido'];
+}
+
+function goPageMessage($msg, $dest = 'msg'){
+  $_SESSION['ead_msg'] = $msg;
+  header('LOCATION: ' . SITE_URL . $dest);
 }
 
 
