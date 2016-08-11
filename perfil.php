@@ -26,17 +26,29 @@ html_header();
 
         <p>Veja abaixo os cursos que você está inscrito.</p>
 
-        <div class="features">
+        <div class="features cursos">
           <?
           foreach($cursos as $curso) {
             ?>
             <article>
-              <a href="#" class="image"><img src="<?= UPLOADS_URL . $curso->Capa; ?>" alt=""/></a>
 
-              <div class="inner">
+              <div class="col1">
+                <a href="#" class="image"><img src="<?= UPLOADS_URL . $curso->Capa; ?>" alt=""/></a>
+
+                <ul class="ficha">
+                  <li><strong>Professor:</strong> Tihh Gonçalves</li>
+                  <li><strong>Sua situação:</strong> Inscrito</li>
+                  <li><strong>Aulas:</strong> 10</li>
+                  <li><strong>Duração:</strong> Previsão de 2 meses</li>
+                </ul>
+
+              </div>
+
+
+              <div class="inner col2">
                 <h4><?= $curso->Nome; ?></h4>
 
-                <p>Curso dedicado a todos que sonham e se sentem chamado a ser Apascentadores do Projeto Talmidim.</p>
+                <p><?= $curso->DescricaoCurta; ?></p>
               </div>
             </article>
             <?
@@ -45,9 +57,11 @@ html_header();
           ?>
             <p>Nenhum curso disponível pra você no momento.</p>
 
+
             <?
           }
         ?>
+          <div style="clear: both"></div>
         </div>
 
       </div>

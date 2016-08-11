@@ -7,3 +7,26 @@ form#login input {
   color: #FFF;
   margin-bottom: 5px;
 }
+.cursos article {
+  clear: both;
+}
+.cursos .col1 {
+  width: 48%;
+  float: left;
+}
+.cursos .col1 .image {
+  width: 100%;
+}
+.cursos .col2 {
+  width: 50%;
+  float: left;
+}
+.cursos .ficha {
+  margin-left: 25px;
+  margin-top: 25px;
+}
+.cursos .ficha li {
+  padding-left: 0;
+  font-size: 13px;
+  line-height: 21px;
+}
