@@ -58,6 +58,8 @@ html_header();
         foreach($modulos as $m=>$modulo) {
           $modulo_nr = ($m + 1);
 
+          $modulo_aberto = curso_ModulosAberto(perfil_id(), $modulo->ID);
+
           ?>
           <h3><?= $modulo_nr . ' - ' . $modulo->Nome; ?></h3>
           <ul class="aulas">
@@ -68,11 +70,33 @@ html_header();
           $aulas = $db->LoadObjects($sql);
 
 
+
           foreach($aulas as $a=>$aula) {
             $aula_nr = ($a + 1);
+
             ?>
 
-              <li>Aula <?= $aula_nr; ?> - <a href="#" title="Assista a essa aula"><?= $aula->Titulo; ?></a><!--<i class="fa fa-check-circle-o" aria-hidden="true"></i>--></li>
+              <li>Aula <?= $aula_nr; ?> -
+
+                <?
+                if($modulo_aberto){
+                ?>
+                <a href="#" title="Assista a essa aula">
+                  <?
+                  }
+                  ?>
+                  <?= $aula->Titulo; ?>
+
+            <?
+            if($modulo_aberto){
+                  ?>
+                </a>
+
+              <?
+              }
+              ?>
+
+                <!--<i class="fa fa-check-circle-o" aria-hidden="true"></i>--></li>
 
             <?
           }

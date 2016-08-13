@@ -163,4 +163,13 @@ function curso_getDuracaoPrevista($aulas){
 
 }
 
+function curso_ModulosAberto($membroID, $moduloID){
+  global $db;
+
+  $sql  = 'SELECT * FROM CursoInscricaoModulos';
+  $sql .= " WHERE Inscricao IN(SELECT ID FROM CursoInscricoes WHERE Membro = " . $membroID . " AND Situacao = 'ATV') AND Modulo = " . $moduloID;
+  $res = $db->LoadObjects($sql);
+
+  return (count($res) > 0);
+}
 ?>
