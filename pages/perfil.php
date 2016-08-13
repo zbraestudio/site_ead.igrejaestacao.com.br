@@ -14,10 +14,10 @@ html_header();
 
         <?
 
-        $sql  = 'SELECT Cursos.*, Membros.Nome ProfessorNome FROM CursoAlunos';
-        $sql .= ' JOIN Cursos ON(Cursos.ID = CursoAlunos.Curso)';
+        $sql  = 'SELECT Cursos.*, Membros.Nome ProfessorNome FROM CursoInscricoes';
+        $sql .= ' JOIN Cursos ON(Cursos.ID = CursoInscricoes.Curso)';
         $sql .= ' JOIN Membros ON(Membros.ID = Cursos.Professor)';
-        $sql .= " WHERE CursoAlunos.Situacao = 'ATV' AND CursoAlunos.Aluno = " . perfil_id();
+        $sql .= " WHERE CursoInscricoes.Situacao = 'ATV' AND CursoInscricoes.Membro = " . perfil_id();
         $cursos = $db->LoadObjects($sql);
 
         if(count($cursos) > 0){

@@ -101,6 +101,7 @@ function perfil_apelido(){
 function goPageMessage($msg, $dest = 'msg'){
   $_SESSION['ead_msg'] = $msg;
   header('LOCATION: ' . SITE_URL . $dest);
+  exit;
 }
 
 

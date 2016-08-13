@@ -2,7 +2,7 @@
 if(!log_verifyPage())
   goPageMessage('Você não pode acessar a página de um Curso sem ter feito seu login antes.', 'login');
 
-html_header();
+
 
 $p = GetParamsArray();
 $sql = "SELECT * FROM Cursos WHERE  Link = '" . $p[0] . "'";
@@ -12,6 +12,17 @@ if(count($cursos) <= 0)
   goPageMessage('Não encontramos o curso que você tentou acessar. Verifique se o link está correto e qualquer coisa, procure a secretaria da LIVRES EaD.');
 
 $curso = $cursos[0];
+
+//verifica se você está inscrito nesse curso
+$sql  = 'SELECT * FROM CursoInscricoes';
+$sql .= " WHERE Curso = " . $curso->ID . " AND Membro = " . perfil_id() . " AND Situacao = 'ATV'";
+$inscricoes = $db->LoadObjects($sql);
+if(count($inscricoes) <= 0)
+  goPageMessage('Você ainda não está inscrito para o curso:<br>' . $curso->Nome);
+
+html_header();
+
+
 ?>
   <!-- Main -->
   <div id="main">
