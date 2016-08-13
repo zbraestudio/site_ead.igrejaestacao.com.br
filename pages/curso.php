@@ -21,12 +21,55 @@ $curso = $cursos[0];
       <div class="container">
         <header class="major">
           <h2><?= $curso->Nome; ?></h2>
-          <p>Faça abaixo seu login.</p>
 
-          <?= GetParamsArray();?>
+          <img src="<?= UPLOADS_URL . $curso->Capa; ?>" alt="" />
 
-          <? print_r(GetParamsArray());?>
+          <p><?= nl2p($curso->DescricaoCurta); ?></p>
+
         </header>
+
+      </div>
+    </section>
+
+
+    <section id="two">
+      <div class="container">
+        <header class="major">
+          <h2>Módulos</h2>
+        </header>
+
+
+        <?
+        $sql  = 'SELECT * FROM CursoModulos';
+        $sql .= ' WHERE Curso = ' . $curso->ID;
+        $modulos = $db->LoadObjects($sql);
+
+        foreach($modulos as $m=>$modulo) {
+          $modulo_nr = ($m + 1);
+
+          ?>
+          <h3><?= $modulo_nr . ' - ' . $modulo->Nome; ?></h3>
+          <ul class="aulas">
+          <?
+
+          $sql  = 'SELECT * FROM CursoModuloAulas';
+          $sql .= ' WHERE Modulo = ' . $modulo->ID;
+          $aulas = $db->LoadObjects($sql);
+
+
+          foreach($aulas as $a=>$aula) {
+            $aula_nr = ($a + 1);
+            ?>
+
+              <li>Aula <?= $aula_nr; ?> - <a href="#" title="Assista a essa aula"><?= $aula->Titulo; ?></a><!--<i class="fa fa-check-circle-o" aria-hidden="true"></i>--></li>
+
+            <?
+          }
+          ?>
+            </ul>
+            <?
+        }
+        ?>
 
       </div>
     </section>

@@ -91,13 +91,31 @@ $logado = log_verify();
       }
 
     } else {
-      ?>
-      <nav id="nav">
-        <ul>
-          <li><a href="<?= SITE_URL?>/perfil" <?= GetPage() == 'perfil.php'?'class="active"':null; ?>>Perfil</a></li>
-        </ul>
-      </nav>
-      <?
+
+      if (GetPage() == 'curso.php') {
+
+        ?>
+        <nav id="nav">
+          <ul>
+            <li><a href="<?= SITE_URL ?>/perfil">Perfil</a>
+            <li><a href="#one">Sobre o curso</a>
+            <li><a href="#two">Módulos</a>
+            </li>
+          </ul>
+        </nav>
+
+        <?
+      } else {
+
+        ?>
+        <nav id="nav">
+          <ul>
+            <li><a href="<?= SITE_URL ?>/perfil" <?= GetPage() == 'perfil.php' ? 'class="active"' : null; ?>>Perfil</a>
+            </li>
+          </ul>
+        </nav>
+        <?
+      }
     }
     ?>
 
