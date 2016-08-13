@@ -6,8 +6,11 @@ html_header();
 
 $p = GetParamsArray();
 $sql = "SELECT * FROM Cursos WHERE  Link = '" . $p[0] . "'";
-die($sql);
 $cursos = $db->LoadObjects($sql);
+
+if(count($cursos) <= 0)
+  goPageMessage('Não encontramos o curso que você tentou acessar. Verifique se o link está correto e qualquer coisa, procure a secretaria da LIVRES EaD.');
+
 $curso = $cursos[0];
 ?>
   <!-- Main -->

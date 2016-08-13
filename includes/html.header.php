@@ -94,8 +94,7 @@ $logado = log_verify();
       ?>
       <nav id="nav">
         <ul>
-          <li><a href="#one" class="active">Perfil</a></li>
-          <li><a href="#two">Login</a></li>
+          <li><a href="<?= SITE_URL?>/perfil" <?= GetPage() == 'perfil.php'?'class="active"':null; ?>>Perfil</a></li>
         </ul>
       </nav>
       <?

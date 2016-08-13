@@ -17,9 +17,11 @@ function GetPage()
 function GetParamsArray(){
   global $params;
 
-  if(count($params) >= 1)
-    return array_shift($params);
-  else {
+  if(count($params) >= 1) {
+    $p = $params;
+    array_shift($p);
+    return $p;
+  } else {
     return null;
   }
 

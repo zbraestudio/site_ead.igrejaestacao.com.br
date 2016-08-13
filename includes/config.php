@@ -6,7 +6,7 @@ if( $_SERVER['HTTP_HOST'] == 'localhost'){
   define('SITE_URL'         , 'http://localhost/github/site_ead.livresweb.com/');
   define('SITE_PATH'        , 'D:/github/site_ead.livresweb.com/');
 
-  define('UPLOADS_URL'      , 'http://localhost/github/site_sistema.livresweb.com/uploads/');
+  define('UPLOADS_URL'      , 'http://sistema.livresweb.com/uploads/');
   define('UPLOADS_PATH'     , 'D:/github/site_sistema.livresweb.com/uploads/');
 
 } else {
@@ -17,7 +17,6 @@ if( $_SERVER['HTTP_HOST'] == 'localhost'){
   define('UPLOADS_PATH'     , '/dados/http/livresweb.com/sistema/uploads/');
 
 }
-
 
 
 /* Banco de Dados */
