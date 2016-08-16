@@ -1,4 +1,5 @@
 <?
+
 html_header();
 ?>
 <!-- Main -->
@@ -13,7 +14,7 @@ html_header();
       </header>
 
       <?
-      if(!empty(@$_SESSION['ead_msg'])){
+      if(!empty($_SESSION['ead_msg'])){
 
         echo('<div class="alert">' . $_SESSION['ead_msg'] . '</div>');
         $_SESSION['ead_msg'] = null;
