@@ -7,6 +7,5 @@ if(empty($_GET['url']))
 
 //divide parâmetros da URL
 $params = explode('/', $_GET['url']);
-
 include(SITE_PATH . 'pages/' . GetPage());
 ?>

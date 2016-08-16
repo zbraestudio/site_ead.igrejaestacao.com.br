@@ -57,7 +57,7 @@ $logado = log_verify();
 
         <h1 id="logo"><a href="#">Olá <?= perfil_apelido(); ?></a></h1>
 
-        <p><a href="<?= SITE_URL ?>script/logout">Sair</a></p>
+        <p><a href="<?= SITE_URL ?>script/logout.php">Sair</a></p>
       </header>
       <?
     }
