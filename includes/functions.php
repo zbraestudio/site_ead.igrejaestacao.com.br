@@ -172,4 +172,36 @@ function curso_ModulosAberto($membroID, $moduloID){
 
   return (count($res) > 0);
 }
+
+function curso_viewAula($aula){
+  global $db;
+
+  $membro = perfil_id();
+  $sql = "INSERT INTO CursoInscricaoAula (`Aula`, `Membro`, `DataHora`) VALUES ('$aula', '$membro', NOW())";
+  $db->Execute($sql);
+}
+
+function curso_verifyViewAula($aula){
+  global $db;
+
+  $sql  = 'SELECT * FROM CursoInscricaoAula';
+  $sql .= ' WHERE Aula = ' . $aula . ' AND Membro = ' . perfil_id();
+  $res = $db->LoadObjects($sql);
+
+  return (count($res) > 0);
+}
+
+function LoadRecord($table, $value, $fieldName = 'ID', $single = true){
+  global $db;
+
+  $sql = 'SELECT * FROM ' . $table . ' WHERE ' . $fieldName . " = '$value'";
+  $res = $db->LoadObjects($sql);
+
+  if($single){
+    $reg = $res[0];
+    return $reg;
+  } else {
+    return $res;
+  }
+}
 ?>

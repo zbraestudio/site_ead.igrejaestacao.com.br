@@ -81,7 +81,7 @@ html_header();
                 <?
                 if($modulo_aberto){
                 ?>
-                <a href="#" title="Assista a essa aula">
+                <a href="<?= SITE_URL?>aula/<?= $aula->ID; ?>" title="Assista a essa aula">
                   <?
                   }
                   ?>
@@ -94,11 +94,15 @@ html_header();
 
               <?
               }
-              ?>
 
-                <!--<i class="fa fa-check-circle-o" aria-hidden="true"></i>--></li>
+              if(curso_verifyViewAula($aula->ID)) {
+                ?>
 
-            <?
+                <i class="fa fa-check-circle-o" aria-hidden="true" title="VocÊ já assistiu essa aula"></i>
+
+
+                <?
+              }
           }
           ?>
             </ul>

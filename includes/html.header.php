@@ -105,8 +105,37 @@ $logado = log_verify();
         </nav>
 
         <?
-      } else {
+      } elseif(GetPage() == 'aula.php') {
 
+        global $aulaTB, $cursoTB, $moduloTB, $db;
+        ?>
+        <nav id="nav">
+        <ul>
+        <li><a href="<?= SITE_URL ?>/perfil">Perfil</a>
+        <li><a href="<?= SITE_URL ?>curso/<?= $cursoTB->Link; ?>"><?= $cursoTB->Nome; ?></a>
+
+          <?
+          $sql = 'SELECT * FROM CursoModuloAulas';
+          $sql .= ' WHERE Modulo = ' . $moduloTB->ID;
+          $sql .= ' ORDER BY Ordem ASC';
+          $aulas = $db->LoadObjects($sql);
+
+          foreach ($aulas as $x=>$aula) {
+
+          $nro = ($x + 1);
+
+          ?>
+          <li><a href="<?= SITE_URL . 'aula/' . $aula->ID; ?>" <?= ($aulaTB->ID == $aula->ID?'class="active"':null); ?>> <?= $nro . ' - ' . $aula->Titulo; ?></a>
+            <?
+            }
+            ?>
+
+            </li>
+          </ul>
+        </nav>
+
+        <?
+      } else {
         ?>
         <nav id="nav">
           <ul>
