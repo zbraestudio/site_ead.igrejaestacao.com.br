@@ -822,7 +822,7 @@ input[type="button"]:disabled,
 }
 #header > header .avatar {
   display: block;
-  margin: 0 auto 2.25em auto;
+  margin: 7px auto;
   width: 8em;
 }
 #header > header h1 {
@@ -962,8 +962,8 @@ ul.aulas li .fa {
 }
 .image.avatar {
   display: block;
-  width: 139px;
-  height: 139px;
+  width: 139px!important;
+  height: 139px!important;
   margin: auto;
   background-repeat: no-repeat;
   background-position: center;
