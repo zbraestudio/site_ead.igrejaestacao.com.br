@@ -14,22 +14,23 @@ html_header();
           <h2>Bem vindo ao EAD LIVRE</h2>
           <p>Essa é nossa plataforma de ensino à distância. </p>
         </header>
-        <p>Faucibus sed lobortis aliquam lorem blandit. Lorem eu nunc metus col. Commodo id in arcu ante lorem ipsum sed accumsan erat praesent faucibus commodo ac mi lacus. Adipiscing mi ac commodo. Vis aliquet tortor ultricies non ante erat nunc integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum.</p>
+        <p>O apóstolo Paulo certa vez disse que a fé vem pelo ouvir a Palavra de Deus. Entendemos assim, que é indispensável conhecermos cada vez mais a respeito das escrituras sagradas. Não seguidos a bíblia, seguido à Cristo. Por mais contraditório que isso possa parecer, faz todo sentido e faz toda a diferença. Porém é sim a Bíblia quem nos contam, de maneira mais próxima, a respeito do nosso Jesus.</p>
+        <p>Aproveite esse espaço! Aprenda! Ensine! Caminhe! Cresça!</p>
+        <p>Tihh Gonçaves - <i>Diretor do Livres EAD</i></p>
       </div>
     </section>
 
     <!-- Two -->
     <section id="two">
       <div class="container">
-        <h3>O que eu preciso para participar?</h3>
-        <p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer lorem ipsum dolor sit amet.</p>
+        <h3>Quem pode participar?</h3>
+        <p>Pra você participar, basta querer. Mais que isso: estar disposto a aprender. E às vezes, antes de aprender precisamos desaprender.
+          Mas depende mais de você do que da gente. Mas conte com a gente!</p>
+        <p>Pré requisitos:</p>
         <ul class="feature-icons">
-          <li class="fa-code">Write all the code</li>
-          <li class="fa-cubes">Stack small boxes</li>
-          <li class="fa-book">Read books and stuff</li>
-          <li class="fa-coffee">Drink much coffee</li>
-          <li class="fa-bolt">Lightning bolt</li>
-          <li class="fa-users">Shadow clone technique</li>
+          <li class="fa-bolt">Ter energia e disposição.</li>
+          <li class="fa-book">Saber ler e escrever.</li>
+          <li class="fa-users">Pode participar de uns encontros presenciais (dependende do curso).</li>
         </ul>
       </div>
     </section>
@@ -38,30 +39,75 @@ html_header();
     <section id="three">
       <div class="container">
         <h3>Cursos Disponíveis</h3>
+
+        <div class="features">
+
+          <?
+
+        $sql  = 'SELECT Cursos.*, Membros.Nome ProfessorNome FROM CursoInscricoes';
+        $sql .= ' JOIN Cursos ON(Cursos.ID = CursoInscricoes.Curso)';
+        $sql .= ' JOIN Membros ON(Membros.ID = Cursos.Professor)';
+        $sql .= " WHERE CursoInscricoes.Situacao = 'ATV'";
+        $sql .= ' ORDER BY Cursos.Nome ASC';
+        $cursos = $db->LoadObjects($sql);
+
+        if(count($cursos) > 0){
+        ?>
+
         <p>Veja abaixo quais são os cursos que já estão disponíveis pra você. <br>
           Aproveite e faça sua inscrição agora mesmo.</p>
-        <div class="features">
-          <article>
-            <a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
-            <div class="inner">
-              <h4>Possibly broke spacetime</h4>
-              <p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
-            </div>
-          </article>
-          <article>
-            <a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
-            <div class="inner">
-              <h4>Terraformed a small moon</h4>
-              <p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
-            </div>
-          </article>
-          <article>
-            <a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
-            <div class="inner">
-              <h4>Snapped dark matter in the wild</h4>
-              <p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
-            </div>
-          </article>
+
+        <div class="features cursos">
+          <?
+          foreach($cursos as $curso) {
+
+            $link_curso = SITE_URL . 'curso/' . $curso->Link;
+            ?>
+            <article>
+
+              <div class="col1">
+
+                <h4 class="onMobile"><?= $curso->Nome; ?></h4>
+                <a href="<?= $link_curso; ?>" class="image"><img src="<?= UPLOADS_URL . $curso->Capa; ?>" alt=""/></a>
+
+                <ul class="ficha">
+                  <li><strong>Professor:</strong> <?= $curso->ProfessorNome; ?>.</li>
+                  <?
+                    $total_aulas = curso_getTotalAulas($curso->ID);
+                  ?>
+                  <li><strong>Aulas:</strong> <?= $total_aulas; ?>.</li>
+                  <li><strong>Duração:</strong> Previsão de <?= curso_getDuracaoPrevista(21); ?>.</li>
+                </ul>
+
+              </div>
+
+
+              <div class="inner col2">
+                <h4 class="offMobile"><?= $curso->Nome; ?></h4>
+
+                <p><?=  nl2p($curso->DescricaoCurta); ?></p>
+              </div>
+            </article>
+            <?
+          }
+          } else {
+          ?>
+            <p>Nenhum curso disponível pra você no momento.</p>
+
+
+            <?
+          }
+        ?>
+          <div style="clear: both"></div>
+        </div>
+
+
+
+          <div style="clear: both"></div>
+        </div>
+
+
+
         </div>
       </div>
     </section>
@@ -70,7 +116,7 @@ html_header();
     <section id="four">
       <div class="container">
         <h3>Contato</h3>
-        <p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
+        <p>Aproveite e mande uma mensagem pra gente e já se inscreva em um curso.</p>
         <form method="post" action="#">
           <div class="row uniform collapse-at-2">
             <div class="6u"><input type="text" name="name" id="name" placeholder="Name" /></div>

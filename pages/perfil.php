@@ -39,8 +39,7 @@ html_header();
                 <a href="<?= $link_curso; ?>" class="image"><img src="<?= UPLOADS_URL . $curso->Capa; ?>" alt=""/></a>
 
                 <ul class="ficha">
-                  <li><strong>Professor:</strong><?= $curso->ProfessorNome; ?>.</li>
-                  <li><strong>Sua situação:</strong> Inscrito.</li>
+                  <li><strong>Professor:</strong> <?= $curso->ProfessorNome; ?>.</li>
 
                   <?
                     $total_aulas = curso_getTotalAulas($curso->ID);

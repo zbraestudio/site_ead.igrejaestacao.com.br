@@ -1,6 +1,8 @@
 <?
 $page = GetPage();
 $logado = log_verify();
+
+global $db;
 ?>
 <!DOCTYPE HTML>
 <!--
@@ -51,9 +53,20 @@ $logado = log_verify();
       </header>
       <?
     } else {
+
+      $avatar = SITE_URL . 'images/avatar.jpg';
+
+      $sql = 'SELECT * FROM MembroFotos WHERE Membro = ' . perfil_id();
+      $res = $db->LoadObjects($sql);
+
+
+      if(count($res) > 0){
+        $reg = $res[0];
+        $avatar = UPLOADS_URL . $reg->Foto;
+      }
       ?>
       <header>
-        <span class="image avatar"><img src="<?= SITE_URL; ?>images/avatar.jpg" alt=""/></span>
+        <span class="image avatar"><img src="<?= $avatar; ?>" alt=""/></span>
 
         <h1 id="logo"><a href="#">Olá <?= perfil_apelido(); ?></a></h1>
 
