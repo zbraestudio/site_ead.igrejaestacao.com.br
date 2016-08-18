@@ -116,3 +116,24 @@
 	});
 
 })(jQuery);
+
+
+/* @tihhgoncalves */
+
+$(document).ready(function(){
+
+	$('a.quero').each(function(){
+
+		var curso = $(this);
+
+		curso.click(function(){
+			var cursoNome = curso.attr('cursoTitulo');
+			$('input#assunto').val('Quero participar do curso ' + cursoNome);
+			$('textarea#msg').val('Gostaria de participar do curso ' + cursoNome);
+		});
+
+
+
+	});
+
+});

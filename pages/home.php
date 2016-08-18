@@ -85,7 +85,7 @@ html_header();
               <div class="inner col2">
                 <h4 class="offMobile"><?= $curso->Nome; ?></h4>
 
-                <p><a href="#" class="quero">Quero participar!</a></p>
+                <p><a href="#four" class="quero" cursoTitulo="<?= $curso->Nome; ?>">Quero participar!</a></p>
                 <p><?=  nl2p($curso->DescricaoCurta); ?></p>
               </div>
             </article>
@@ -120,20 +120,20 @@ html_header();
         <p>Aproveite e mande uma mensagem pra gente e já se inscreva em um curso.</p>
         <form method="post" action="#">
           <div class="row uniform collapse-at-2">
-            <div class="6u"><input type="text" name="name" id="name" placeholder="Name" /></div>
-            <div class="6u"><input type="email" name="email" id="email" placeholder="Email" /></div>
+            <div class="6u"><input type="text" name="nome" id="nome" placeholder="Seu nome" /></div>
+            <div class="6u"><input type="email" name="email" id="email" placeholder="Seu e-mail" /></div>
           </div>
           <div class="row uniform">
-            <div class="12u"><input type="text" name="subject" id="subject" placeholder="Subject" /></div>
+            <div class="12u"><input type="text" name="assunto" id="assunto" placeholder="Assunto" /></div>
           </div>
           <div class="row uniform">
-            <div class="12u"><textarea name="message" id="message" placeholder="Message" rows="6"></textarea></div>
+            <div class="12u"><textarea name="msg" id="msg" placeholder="Sua mensagem" rows="6"></textarea></div>
           </div>
           <div class="row uniform">
             <div class="12u">
               <ul class="actions">
-                <li><input type="submit" class="special" value="Send Message" /></li>
-                <li><input type="reset" value="Reset Form" /></li>
+                <li><input type="submit" class="special" value="Enviar sua mensagem" /></li>
+                <li><input type="reset" value="Limpar" /></li>
               </ul>
             </div>
           </div>
