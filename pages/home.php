@@ -114,16 +114,16 @@ html_header();
       <div class="container">
         <h3>Contato</h3>
         <p>Aproveite e mande uma mensagem pra gente e já se inscreva em um curso.</p>
-        <form method="post" action="#">
+        <form method="post" action="<?= SITE_URL; ?>mails/script.contato.send.php">
           <div class="row uniform collapse-at-2">
-            <div class="6u"><input type="text" name="nome" id="nome" placeholder="Seu nome" /></div>
-            <div class="6u"><input type="email" name="email" id="email" placeholder="Seu e-mail" /></div>
+            <div class="6u"><input type="text" name="nome" id="nome" placeholder="Seu nome" required /></div>
+            <div class="6u"><input type="email" name="email" id="email" placeholder="Seu e-mail" required /></div>
           </div>
           <div class="row uniform">
-            <div class="12u"><input type="text" name="assunto" id="assunto" placeholder="Assunto" /></div>
+            <div class="12u"><input type="text" name="assunto" id="assunto" placeholder="Assunto" required /></div>
           </div>
           <div class="row uniform">
-            <div class="12u"><textarea name="msg" id="msg" placeholder="Sua mensagem" rows="6"></textarea></div>
+            <div class="12u"><textarea name="msg" id="msg" placeholder="Sua mensagem" rows="6" required></textarea></div>
           </div>
           <div class="row uniform">
             <div class="12u">

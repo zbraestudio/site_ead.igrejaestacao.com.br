@@ -1,0 +1,17 @@
+{
+  "name": "site_ead.livresweb.com",
+  "homepage": "https://github.com/zbraestudio/site_ead.livresweb.com",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "PHPMailer": "https://github.com/PHPMailer/PHPMailer.git#^5.2.16"
+  }
+}
