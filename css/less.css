@@ -951,6 +951,24 @@ ul.aulas li .fa {
   margin: 0;
   margin-top: 25px;
 }
+#header > nav ul li a {
+  padding: 0;
+}
+#header > header .avatar {
+  margin-top: 7px;
+}
+#header > header {
+  padding: 20px;
+}
+.image.avatar {
+  display: block;
+  width: 139px;
+  height: 139px;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 /*
 
 

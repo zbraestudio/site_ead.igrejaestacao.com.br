@@ -45,7 +45,7 @@ global $db;
     if(!$logado) {
       ?>
       <header>
-        <span class="image avatar"><img src="<?= SITE_URL; ?>images/avatar.jpg" alt=""/></span>
+        <span class="image avatar" style="background-image: url('<?= SITE_URL; ?>images/avatar.jpg');"></span>
 
         <h1 id="logo"><a href="#">Olá visitante</a></h1>
 
@@ -66,7 +66,7 @@ global $db;
       }
       ?>
       <header>
-        <span class="image avatar"><img src="<?= $avatar; ?>" alt=""/></span>
+        <span class="image avatar" style="background-image: url('<?= $avatar; ?>');"></span>
 
         <h1 id="logo"><a href="#">Olá <?= perfil_apelido(); ?></a></h1>
 
@@ -190,11 +190,11 @@ global $db;
 
     <footer>
       <ul class="icons">
-        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+        <!--<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
         <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
         <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-        <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-        <li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+        <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>-->
+        <li><a href="mailto:tiago@ielbc.com.br" class="icon fa-envelope"><span class="label">Email</span></a></li>
       </ul>
     </footer>
   </section>
