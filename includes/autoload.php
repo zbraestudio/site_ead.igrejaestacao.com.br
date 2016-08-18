@@ -11,6 +11,9 @@ $db = new nbrDB(DB_HOST, DB_DB, DB_USER, DB_PASS);
 /* Envia E-mail */
 require_once(SITE_PATH . 'bower_components/PHPMailer/PHPMailerAutoload.php');
 
+/* E-mails */
+include(SITE_PATH . '/mails/templates/template_aula_assistindo.php');
+
 $mailer = new PHPMailer;
 
 $mailer->isSMTP();

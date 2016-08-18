@@ -179,6 +179,8 @@ function curso_viewAula($aula){
   $membro = perfil_id();
   $sql = "INSERT INTO CursoInscricaoAula (`Aula`, `Membro`, `DataHora`) VALUES ('$aula', '$membro', NOW())";
   $db->Execute($sql);
+
+  mail_aula_assistindo_send($aula);
 }
 
 function curso_verifyViewAula($aula){
