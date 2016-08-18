@@ -26,7 +26,7 @@ function mail_aula_assistindo_getHtml($cursoTB, $moduloTB, $aulaTB){
           <li><strong>Curso:</strong> ' . $cursoTB->Nome . '</li>
           <li><strong>Módulo:</strong> ' . $moduloTB->Nome . '</li>
           <li><strong>Aula:</strong> ' . $aulaTB->Titulo . '</li>
-          <li><strong>DAta e hora:</strong> ' . date('d/m/Y H:i') . '</li>
+          <li><strong>Data e hora:</strong> ' . date('d/m/Y H:i') . '</li>
 
         </ul>
       </td>
