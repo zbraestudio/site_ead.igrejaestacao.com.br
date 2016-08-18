@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=PT+Serif');
 @import url(font-awesome.min.css);
 @import url("http://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400");
 /*
@@ -934,6 +935,21 @@ ul.aulas li a {
 }
 ul.aulas li .fa {
   font-size: 27px;
+}
+#aula img {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+#aula p {
+  font-size: 14px;
+  font-family: 'PT Serif', serif;
+  font-size: 20px;
+  line-height: 33px;
+}
+#questoes label {
+  margin: 0;
+  margin-top: 25px;
 }
 /*
 

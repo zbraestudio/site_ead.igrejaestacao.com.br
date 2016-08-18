@@ -103,8 +103,35 @@ html_header();
 
                 <?
               }
+
+              ?>
+                </li>
+
+                <?
           }
-          ?>
+
+          //verifica se módulo tem questões
+          $sql  = 'SELECT * FROM CursoModuloQuestoes WHERE Modulo = ' . $modulo->ID;
+          $questoes = $db->LoadObjects($sql);
+
+          if(count($questoes) > 0) {
+
+            $respondido = curso_verifyModuloRespondido($modulo->ID);
+
+            $okay = '<i class="fa fa-check-circle-o" aria-hidden="true" title="Você já enviou sua(s) resposta(s);"></i>';
+            ?>
+            <li>
+              <? if(!$respondido) { ?>
+              <a href="<?= SITE_URL; ?>questoes/<?= $modulo->ID; ?>">
+              <? } ?>
+                Sua vez
+              <? if(!$respondido) { ?>
+              </a>
+              <? } ?>
+              - Responda para concluir o módulo <?= ($respondido?$okay:null)?></li>
+            <?
+          }
+            ?>
             </ul>
             <?
         }

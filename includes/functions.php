@@ -191,6 +191,18 @@ function curso_verifyViewAula($aula){
   return (count($res) > 0);
 }
 
+function curso_verifyModuloRespondido($modulo){
+  global $db;
+
+  $sql  = 'SELECT CursoModuloQuestoes.Questao FROM CursoModuloQuestoesRespostas';
+  $sql .= ' JOIN CursoModuloQuestoes ON(CursoModuloQuestoes.ID = CursoModuloQuestoesRespostas.Questao)';
+  $sql .= ' WHERE CursoModuloQuestoesRespostas.Membro = ' . perfil_id() . ' AND CursoModuloQuestoes.Modulo = ' . $modulo;
+
+  $res = $db->LoadObjects($sql);
+
+  return (count($res) > 0);
+}
+
 function LoadRecord($table, $value, $fieldName = 'ID', $single = true){
   global $db;
 

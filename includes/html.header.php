@@ -105,13 +105,13 @@ $logado = log_verify();
         </nav>
 
         <?
-      } elseif(GetPage() == 'aula.php') {
+      } elseif(GetPage() == 'aula.php' || GetPage() == 'questoes.php') {
 
         global $aulaTB, $cursoTB, $moduloTB, $db;
         ?>
         <nav id="nav">
         <ul>
-        <li><a href="<?= SITE_URL ?>/perfil">Perfil</a>
+        <li><a href="<?= SITE_URL ?>perfil">Perfil</a>
         <li><a href="<?= SITE_URL ?>curso/<?= $cursoTB->Link; ?>"><?= $cursoTB->Nome; ?></a>
 
           <?
@@ -124,13 +124,38 @@ $logado = log_verify();
 
           $nro = ($x + 1);
 
+          $selecionado = null;
+
+          if(isset($aulaTB)){
+
+            if($aulaTB->ID == $aula->ID)
+              $selecionado = 'class="active"';
+          }
+
+
           ?>
-          <li><a href="<?= SITE_URL . 'aula/' . $aula->ID; ?>" <?= ($aulaTB->ID == $aula->ID?'class="active"':null); ?>> <?= $nro . ' - ' . $aula->Titulo; ?></a>
+          <li><a href="<?= SITE_URL . 'aula/' . $aula->ID; ?>" <?= $selecionado; ?>> <?= $nro . ' - ' . $aula->Titulo; ?></a></li>
             <?
             }
             ?>
 
-            </li>
+          <?
+          //verifica se módulo tem questões
+          $sql  = 'SELECT * FROM CursoModuloQuestoes WHERE Modulo = ' . $moduloTB->ID;
+          $questoes = $db->LoadObjects($sql);
+
+          if(count($questoes) > 0) {
+
+            if(GetPage() == 'questoes.php')
+              $selecionado = 'class="active"';
+            else{
+              $selecionado = null;
+            }
+            ?>
+            <li><a href="<?= SITE_URL; ?>questoes/<?= $moduloTB->ID; ?>" <?= $selecionado; ?>>Sua vez - Responda!</a></li>
+            <?
+          }
+          ?>
           </ul>
         </nav>
 

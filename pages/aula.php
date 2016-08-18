@@ -38,9 +38,12 @@ html_header();
         <p><?= $cursoTB->Nome . ' // ' . $moduloTB->Nome; ?></p>
       </header>
 
+      <div id="aula">
       <?
       echo $aulaTB->Aula;
       ?>
+      </div>
+
     </div>
   </section>
 

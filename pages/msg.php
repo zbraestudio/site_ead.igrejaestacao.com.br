@@ -1,6 +1,12 @@
 <?
-if(!isset($_SESSION['ead_msg']))
-  header('LOCATION: ' . SITE_URL);
+if(!isset($_SESSION['ead_msg'])){
+
+  if(!log_verify())
+    header('LOCATION: ' . SITE_URL . 'home');
+  else
+    header('LOCATION: ' . SITE_URL . 'perfil');
+}
+
 
 
 
