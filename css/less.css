@@ -1042,3 +1042,12 @@ form#login input {
   font-size: 13px;
   line-height: 21px;
 }
+.cursos a.quero {
+  color: #4acaa8;
+  text-decoration: none;
+  font-size: 18px;
+  border: 0;
+}
+.cursos a.quero:hover {
+  text-decoration: underline;
+}

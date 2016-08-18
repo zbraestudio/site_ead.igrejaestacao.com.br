@@ -68,7 +68,7 @@ html_header();
               <div class="col1">
 
                 <h4 class="onMobile"><?= $curso->Nome; ?></h4>
-                <a href="<?= $link_curso; ?>" class="image"><img src="<?= UPLOADS_URL . $curso->Capa; ?>" alt=""/></a>
+                <img  class="image" src="<?= UPLOADS_URL . $curso->Capa; ?>" alt=""/>
 
                 <ul class="ficha">
                   <li><strong>Professor:</strong> <?= $curso->ProfessorNome; ?>.</li>
@@ -85,6 +85,7 @@ html_header();
               <div class="inner col2">
                 <h4 class="offMobile"><?= $curso->Nome; ?></h4>
 
+                <p><a href="#" class="quero">Quero participar!</a></p>
                 <p><?=  nl2p($curso->DescricaoCurta); ?></p>
               </div>
             </article>
