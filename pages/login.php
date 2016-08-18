@@ -21,7 +21,8 @@ html_header();
       ?>
 
       <form id="login" action="<?= SITE_URL; ?>script/login.php" method="post">
-      <p>Faucibus sed lobortis aliquam lorem blandit. Lorem eu nunc metus col. Commodo id in arcu ante lorem ipsum sed accumsan erat praesent faucibus commodo ac mi lacus. Adipiscing mi ac commodo. Vis aliquet tortor ultricies non ante erat nunc integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum.</p>
+      <p>Digite abaixo suas credenciais para o Livres EaD.
+        Caso você ainda não tenha um <i>login</i> e uma senha e gostaria de fazer um curso, envie um e-mail para <a href="mailto:ead@livresweb.com">ead@livresweb.com</a>.</p>
         <input type="email" name="email" placeholder="Seu e-mail" required="">
         <input type="password" name="senha" placeholder="Sua senha" required="">
 
