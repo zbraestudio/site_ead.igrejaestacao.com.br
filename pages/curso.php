@@ -121,11 +121,11 @@ html_header();
             $okay = '<i class="fa fa-check-circle-o" aria-hidden="true" title="Você já enviou sua(s) resposta(s);"></i>';
             ?>
             <li>
-              <? if(!$respondido) { ?>
+              <? if( (!$respondido) && $modulo_aberto) { ?>
               <a href="<?= SITE_URL; ?>questoes/<?= $modulo->ID; ?>">
               <? } ?>
                 Sua vez
-              <? if(!$respondido) { ?>
+              <? if( (!$respondido) && $modulo_aberto) { ?>
               </a>
               <? } ?>
               - Responda para concluir o módulo <?= ($respondido?$okay:null)?></li>
