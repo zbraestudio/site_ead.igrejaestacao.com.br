@@ -44,10 +44,8 @@ html_header();
 
           <?
 
-        $sql  = 'SELECT Cursos.*, Membros.Nome ProfessorNome FROM CursoInscricoes';
-        $sql .= ' JOIN Cursos ON(Cursos.ID = CursoInscricoes.Curso)';
+        $sql  = 'SELECT Cursos.*, Membros.Nome ProfessorNome FROM Cursos';
         $sql .= ' JOIN Membros ON(Membros.ID = Cursos.Professor)';
-        $sql .= " WHERE CursoInscricoes.Situacao = 'ATV'";
         $sql .= ' ORDER BY Cursos.Nome ASC';
         $cursos = $db->LoadObjects($sql);
 
@@ -94,8 +92,6 @@ html_header();
           } else {
           ?>
             <p>Nenhum curso disponível pra você no momento.</p>
-
-
             <?
           }
         ?>
