@@ -44,6 +44,8 @@ html_header();
       ?>
       </div>
 
+      <a href="<?= SITE_URL . 'curso/' . $cursoTB->Link; ?>" class="voltarCurso">Voltar para o curso</a>
+
     </div>
   </section>
 

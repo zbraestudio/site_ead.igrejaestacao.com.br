@@ -23,7 +23,7 @@ html_header();
         if(count($cursos) > 0){
         ?>
 
-        <p>Veja abaixo os cursos que você está inscrito.</p>
+        <p>Veja abaixo o(s) curso(s) que você está inscrito.</p>
 
         <div class="features cursos">
           <?
@@ -53,6 +53,8 @@ html_header();
 
               <div class="inner col2">
                 <h4 class="offMobile"><a href="<?= $link_curso; ?>"><?= $curso->Nome; ?></a></h4>
+
+                <p><a href="<?= $link_curso; ?>" class="entrarCurso">Entrar no curso</a> </p>
 
                 <p><?=  nl2p($curso->DescricaoCurta); ?></p>
               </div>

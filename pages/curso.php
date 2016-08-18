@@ -12,6 +12,7 @@ if(count($cursos) <= 0)
   goPageMessage('Não encontramos o curso que você tentou acessar. Verifique se o link está correto e qualquer coisa, procure a secretaria da LIVRES EaD.');
 
 $curso = $cursos[0];
+$professorTB = LoadRecord('Membros', $curso->Professor);
 
 //verifica se você está inscrito nesse curso
 $sql  = 'SELECT * FROM CursoInscricoes';
@@ -36,6 +37,7 @@ html_header();
           <img src="<?= UPLOADS_URL . $curso->Capa; ?>" alt="" />
 
           <p><?= nl2p($curso->DescricaoCurta); ?></p>
+          <p><strong>Professor:</strong> <?= $professorTB->Nome; ?></p>
 
         </header>
 
