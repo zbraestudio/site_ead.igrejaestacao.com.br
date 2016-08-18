@@ -12,7 +12,7 @@ global $db;
 -->
 <html>
 <head>
-  <title>EaD LIVRE // Educação</title>
+  <title>Livres EaD</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="description" content="" />
   <meta name="keywords" content="" />
