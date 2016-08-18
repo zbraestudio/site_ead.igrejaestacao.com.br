@@ -35,7 +35,7 @@ html_header();
 
               <div class="col1">
 
-                <h4 class="onMobile"><?= $curso->Nome; ?></h4>
+                <h4 class="onMobile"><a href="<?= $link_curso; ?>"><?= $curso->Nome; ?></a></h4>
                 <a href="<?= $link_curso; ?>" class="image"><img src="<?= UPLOADS_URL . $curso->Capa; ?>" alt=""/></a>
 
                 <ul class="ficha">
@@ -52,7 +52,7 @@ html_header();
 
 
               <div class="inner col2">
-                <h4 class="offMobile"><?= $curso->Nome; ?></h4>
+                <h4 class="offMobile"><a href="<?= $link_curso; ?>"><?= $curso->Nome; ?></a></h4>
 
                 <p><?=  nl2p($curso->DescricaoCurta); ?></p>
               </div>
