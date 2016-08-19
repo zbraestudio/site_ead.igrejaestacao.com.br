@@ -3,17 +3,22 @@ $pms = GetParamsArray();
 
 // verifica se tem parametro
 if(count($pms) <= 0)
-  goPageMessage('As questões que você está tentando acessar está, está com link incorreto.');
+  goPageMessage('As questÃµes que vocÃª estÃ¡ tentando acessar estÃ¡, estÃ¡ com link incorreto.');
 
 $moduloID = $pms[0];
 
-// verifica se existe aula no banco
+// verifica se o modulo estÃ¡ liberado pra mim
 $sql  = 'SELECT * FROM CursoInscricaoModulos';
 $sql .= " WHERE Modulo IN(SELECT Modulo FROM CursoModuloAulas Where Modulo = " . $moduloID . " AND Inscricao = " . perfil_id() . ')';
 $res = $db->LoadObjects($sql);
 
 if(count($res) < 0)
-  goPageMessage('Você não tem permissão para responder essas questões ou elas não foram encontradas.');
+  goPageMessage('VocÃª nÃ£o tem permissÃ£o para responder essas questÃµes ou elas nÃ£o foram encontradas.');
+
+//verifica se jÃ¡ foi respondido
+
+if(curso_verifyModuloRespondido($moduloID))
+  goPageMessage('VocÃª jÃ¡ respondeu as perguntar desse mÃ³dulo.');
 
 $moduloTB = LoadRecord('CursoModulos', $moduloID);
 $cursoTB = LoadRecord('Cursos', $moduloTB->Curso);

@@ -26,7 +26,7 @@ function mail_aula_respostas_getHtml($moduloTB, $questoes){
 
     $html .= '<hr>
         <p><strong>' . $pergunta . '</strong></p>
-        <span style="color: #e6656c;font-size: 20px; margin: 25px 0;"> ' . $resposta . '</span>';
+        <span style="color: #e6656c;font-size: 20px; margin: 25px 0;"> ' . nl2br($resposta) . '</span>';
   }
 
     $html .= '<hr>

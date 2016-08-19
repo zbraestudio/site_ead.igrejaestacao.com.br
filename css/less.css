@@ -1055,3 +1055,6 @@ a.entrarCurso:hover,
 a.voltarCurso:hover {
   text-decoration: underline;
 }
+blockquote p {
+  margin: 10px 0;
+}
