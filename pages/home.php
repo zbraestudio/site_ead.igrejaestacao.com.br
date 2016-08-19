@@ -46,6 +46,7 @@ html_header();
 
         $sql  = 'SELECT Cursos.*, Membros.Nome ProfessorNome FROM Cursos';
         $sql .= ' JOIN Membros ON(Membros.ID = Cursos.Professor)';
+        $sql .= " WHERE Cursos.Publicado = 'Y' ";
         $sql .= ' ORDER BY Cursos.Nome ASC';
         $cursos = $db->LoadObjects($sql);
 
