@@ -5,10 +5,16 @@ include('../includes/autoload.php');
 
 $moduloID   = $_POST['modulo'];
 $questoesID = $_POST['questoesID'];
+$moduloTB = LoadRecord('CursoModulos', $moduloID);
 
 $ids = explode('|', $questoesID);
 
+$questoes_email = array();
+
 foreach($ids as $id){
+
+  $perguntaTB = LoadRecord('CursoModuloQuestoes', $id);
+
   $campo = 'questao_' . $id;
   $campo_valor = $_POST[$campo];
 
@@ -22,7 +28,14 @@ foreach($ids as $id){
 
   $db->Execute($sql);
 
+  $questoes_email[] = array(
+    'pergunta' => $perguntaTB->Questao,
+    'resposta' => $campo_valor
+  );
+
 }
+
+mail_aula_respostas_send($moduloTB, $questoes_email);
 goPageMessage('Sua resposta foi registrada e enviada a(o) professor(a). Aproveite para reler o módulo que acabou de estudar e aguarde novas liberações pelo(a) professor(a) em breve.');
 
 ?>

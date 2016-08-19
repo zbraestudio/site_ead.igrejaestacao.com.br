@@ -13,6 +13,7 @@ require_once(SITE_PATH . 'bower_components/PHPMailer/PHPMailerAutoload.php');
 
 /* E-mails */
 include(SITE_PATH . '/mails/templates/template_aula_assistindo.php');
+include(SITE_PATH . '/mails/templates/template_aula_respostas.php');
 
 $mailer = new PHPMailer;
 
