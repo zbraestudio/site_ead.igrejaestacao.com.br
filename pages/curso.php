@@ -36,8 +36,8 @@ html_header();
 
           <img src="<?= UPLOADS_URL . $curso->Capa; ?>" alt="" />
 
-          <p><?= nl2p($curso->DescricaoCurta); ?></p>
-          <p><strong>Professor:</strong> <?= $professorTB->Nome; ?></p>
+          <p><?= nl2p($curso->Descricao); ?></p>
+          <p><strong>Professor:</strong> <?= $professorTB->Apelido; ?> (<a href="mailto:<?= $professorTB->Email; ?>"><?= $professorTB->Email; ?></a>)</p>
 
         </header>
 
