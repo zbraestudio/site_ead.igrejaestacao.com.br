@@ -119,13 +119,23 @@ function curso_getTotalAulas($curso){
   return $total;
 }
 
-function curso_getDuracaoPrevista($aulas){
-  /* Médias de 1 aula por semana */
+function curso_getTotalModulos($curso){
+  global $db;
+
+  $sql = 'SELECT COUNT(ID) TOTAL FROM CursoModulos WHERE Curso = ' . $curso;
+  $total = $db->LoadObjects($sql);
+  $total = $total[0];
+  $total = intval($total->TOTAL);
+  return $total;
+}
+
+function curso_getDuracaoPrevista($modulos){
+  /* Médias de 1 módulo por semana */
 
   /* mês = 4 semanas */
   /* ano = 12 meses */
 
-  $semanas = $aulas;
+  $semanas = $modulos;
 
   if($semanas < 4)
     return $semanas . ' semana(s)';

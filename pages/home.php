@@ -72,10 +72,11 @@ html_header();
                 <ul class="ficha">
                   <li><strong>Professor:</strong> <?= $curso->ProfessorNome; ?>.</li>
                   <?
-                    $total_aulas = curso_getTotalAulas($curso->ID);
+                  $total_aulas = curso_getTotalAulas($curso->ID);
+                  $total_modulos = curso_getTotalModulos($curso->ID);
                   ?>
-                  <li><strong>Aulas:</strong> <?= $total_aulas; ?>.</li>
-                  <li><strong>Duração:</strong> Previsão de <?= curso_getDuracaoPrevista(21); ?>.</li>
+                  <li><strong>Aulas:</strong> <?= $total_aulas; ?> (<?= $total_modulos; ?> módulos).</li>
+                  <li><strong>Duração:</strong> Previsão de <?= curso_getDuracaoPrevista($total_modulos); ?>.</li>
                 </ul>
 
               </div>

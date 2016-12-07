@@ -12,6 +12,6 @@ if(login($email, $senha)){
   header('LOCATION:' . SITE_URL . 'perfil');
 
 } else {
-  goPageMessage('Ops! Não conseguimos validar suas credenciais Livres EaD.', 'login');
+  goPageMessage('Ops! NÃ£o conseguimos validar suas credenciais Livres EaD.', 'login');
 }
 ?>
