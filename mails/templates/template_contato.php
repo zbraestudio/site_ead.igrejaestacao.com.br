@@ -19,7 +19,7 @@ function mail_contato_getHtml($nome, $email, $assunto, $mensagem){
 
         <p>Recebemos sua mensagem e assim que for possível estaremos entrando em contato com você para respondê-la.</p>
 
-        <p>Aproveite e faça perguntas no nosso QUIZ!<br>Pode fazer quantas quiser, corre lá: http://movimento.ielbc.com.br/quiz</p>
+        <p>Aproveite e faça perguntas no nosso QUIZ!<br>Pode fazer quantas quiser, corre lá: http://www.livresweb.com/quiz</p>
 
         <hr>
 
@@ -54,7 +54,6 @@ function mail_contato_send($nome, $email, $assunto, $mensagem){
   global $mailer;
 
   $mailer->addAddress($email);
-  $mailer->addCC('tiago@ielbc.com.br');
 
   $mailer->Subject = 'Recebemos sua mensagem!';
   $mailer->Body    = mail_contato_getHtml($nome, $email, $assunto, $mensagem);

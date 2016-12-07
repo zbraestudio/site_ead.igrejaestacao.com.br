@@ -15,18 +15,22 @@ require_once(SITE_PATH . 'bower_components/PHPMailer/PHPMailerAutoload.php');
 include(SITE_PATH . '/mails/templates/template_aula_assistindo.php');
 include(SITE_PATH . '/mails/templates/template_aula_respostas.php');
 
+
+/* Configurações de E-mail */
 $mailer = new PHPMailer;
 
 $mailer->isSMTP();
-$mailer->Host =             'smtp.ielbc.com.br';
+$mailer->Host =             'smtp.livresweb.com';
 $mailer->SMTPAuth =         true;
-$mailer->Username =         'tiago@ielbc.com.br';
+$mailer->Username =         'tiago@livresweb.com';
 $mailer->Password =         'nw041203';
 //$mailer->SMTPSecure =       'tls';
 $mailer->Port =             587;
 
+$mailer->AddBCC('tiago@livresweb.com');
+
 $mailer->CharSet = "UTF-8";
 $mailer->addEmbeddedImage(SITE_PATH . 'mails/templates/images/logo.png', 'logo');
-$mailer->setFrom('tiago@ielbc.com.br', 'LIVRES EaD');
+$mailer->setFrom('tiago@livresweb.com', 'LIVRES EaD');
 $mailer->isHTML(true);
 ?>

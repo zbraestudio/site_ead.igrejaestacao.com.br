@@ -53,8 +53,6 @@ function mail_aula_assistindo_send($aula){
   $moduloTB = LoadRecord('CursoModulos', $aulaTB->Modulo);
   $cursoTB = LoadRecord('Cursos', $moduloTB->Curso);
 
-  $mailer->addAddress('tiago@ielbc.com.br');
-
   $mailer->Subject = perfil_nome() . ' começou a assistir uma aula';
   $mailer->Body    = mail_aula_assistindo_getHtml($cursoTB, $moduloTB, $aulaTB);
 

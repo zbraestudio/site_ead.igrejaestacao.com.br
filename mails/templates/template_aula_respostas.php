@@ -59,8 +59,6 @@ function mail_aula_respostas_send($moduloTB, $questoes){
   global $mailer;
 
 
-  $mailer->addAddress('tiago@ielbc.com.br');
-
   $mailer->Subject = perfil_nome() . ' respondeu questões';
   $mailer->Body    = mail_aula_respostas_getHtml($moduloTB, $questoes);
 
