@@ -27,4 +27,4 @@ else
 
 define('DB_USER'          , 'root');
 define('DB_PASS'          , 'nwtiago');
-define('DB_DB'            , 'ielbc_com_br_sistema');
+define('DB_DB'            , 'livresweb_com_sistema');
