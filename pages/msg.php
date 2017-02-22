@@ -25,7 +25,17 @@ html_header();
               $_SESSION['ead_msg'] = null;
             ?></p>
 
-          <p><a href="<?= SITE_URL . 'home'; ?>">Voltar ao início</a> </p>
+          <?
+          if(log_verify()) {
+            ?>
+            <p><a href="<?= SITE_URL . 'perfil'; ?>">Voltar ao seu Perfil</a></p>
+          <?
+          } else {
+            ?>
+            <p><a href="<?= SITE_URL . 'home'; ?>">Voltar ao início</a></p>
+          <?
+          }
+            ?>
         </header>
 
       </div>
