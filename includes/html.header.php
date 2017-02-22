@@ -190,11 +190,11 @@ global $db;
 
     <footer>
       <ul class="icons">
-        <!--<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-        <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-        <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-        <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>-->
-        <li><a href="mailto:tiago@ielbc.com.br" class="icon fa-envelope"><span class="label">Email</span></a></li>
+        <!--<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>-->
+        <li><a href="https://fb.com/igrejaestacao" class="icon fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+        <li><a href="http://instagram.com/igrejaestacao" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+        <!--<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>-->
+        <li><a href="mailto:tiago@igrejaestacao.com.br" class="icon fa-envelope"><span class="label">Email</span></a></li>
       </ul>
     </footer>
   </section>

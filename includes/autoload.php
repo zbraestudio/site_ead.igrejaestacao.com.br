@@ -16,21 +16,21 @@ include(SITE_PATH . '/mails/templates/template_aula_assistindo.php');
 include(SITE_PATH . '/mails/templates/template_aula_respostas.php');
 
 
-/* Configurações de E-mail */
+/* Configuraï¿½ï¿½es de E-mail */
 $mailer = new PHPMailer;
 
 $mailer->isSMTP();
-$mailer->Host =             'smtp.livresweb.com';
+$mailer->Host =             'smtp.igrejaestacao.com.br';
 $mailer->SMTPAuth =         true;
-$mailer->Username =         'tiago@livresweb.com';
+$mailer->Username =         'tiago@igrejaestacao.com.br';
 $mailer->Password =         'nw041203';
 //$mailer->SMTPSecure =       'tls';
 $mailer->Port =             587;
 
-$mailer->AddBCC('tiago@livresweb.com');
+$mailer->AddBCC('tiago@igrejaestacao.com.br');
 
 $mailer->CharSet = "UTF-8";
 $mailer->addEmbeddedImage(SITE_PATH . 'mails/templates/images/logo.png', 'logo');
-$mailer->setFrom('tiago@livresweb.com', 'LIVRES EaD');
+$mailer->setFrom('tiago@igrejaestacao.com.br', 'ESTAÃ‡ÃƒO EaD');
 $mailer->isHTML(true);
 ?>

@@ -9,7 +9,7 @@ function mail_aula_assistindo_getHtml($cursoTB, $moduloTB, $aulaTB){
   <body style="background-color:#F5F5F5;padding: 25px;font-family: Tahoma, Geneva, sans-serif;">
   <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr>
-      <td style="background-color: #F8F8F8; border: 1px solid #EEEEEE;; background-image: url(cid:logo); background-repeat:no-repeat; background-position: 15px center; line-height:72px;padding-left: 85px; font-size:20px;color: #666666;">
+      <td style="background-color: #F8F8F8; border: 1px solid #EEEEEE;; background-image: url(cid:logo); background-repeat:no-repeat; background-position: 15px center; line-height:72px;padding-left: 175px; font-size:20px;color: #666666;">
         AULA SENDO ASSISTIDA
       </td>
     </tr>

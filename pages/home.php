@@ -11,12 +11,12 @@ html_header();
     <section id="one">
       <div class="container">
         <header class="major">
-          <h2>Bem vindo ao EAD LIVRE</h2>
-          <p>Essa é nossa plataforma de ensino à distância. </p>
+          <h2>Bem vindo ao ESTAÇÃO EaD</h2>
+          <p>Essa é nossa plataforma de Ensino à Distância. </p>
         </header>
-        <p>O apóstolo Paulo certa vez disse que a fé vem pelo ouvir a Palavra de Deus. Entendemos assim, que é indispensável conhecermos cada vez mais a respeito das escrituras sagradas. Não seguidos a bíblia, seguido à Cristo. Por mais contraditório que isso possa parecer, faz todo sentido e faz toda a diferença. Porém é sim a Bíblia quem nos contam, de maneira mais próxima, a respeito do nosso Jesus.</p>
+        <p>O apóstolo Paulo certa vez disse que a fé vem pelo ouvir a Palavra de Deus. Entendemos assim, que é indispensável conhecermos cada vez mais a respeito das escrituras sagradas. Não seguidos a bíblia, seguido à Cristo. Por mais contraditório que isso possa talvez, hoje, parecer à você, faz todo sentido e faz toda a diferença. Porém é a Bíblia que nos contam, de maneira mais próxima, a respeito do nosso Jesus.</p>
         <p>Aproveite esse espaço! Aprenda! Ensine! Caminhe! Cresça!</p>
-        <p>Tihh Gonçaves - <i>Diretor do Livres EAD</i></p>
+        <p>Tihh Gonçaves - <i>Diretor do ESTAÇÃO EaD</i></p>
       </div>
     </section>
 
@@ -44,7 +44,7 @@ html_header();
 
           <?
 
-        $sql  = 'SELECT Cursos.*, Membros.Nome ProfessorNome FROM Cursos';
+        $sql  = 'SELECT Cursos.*, Membros.Apelido ProfessorApelido, Membros.Email ProfessorEmail FROM Cursos';
         $sql .= ' JOIN Membros ON(Membros.ID = Cursos.Professor)';
         $sql .= " WHERE Cursos.Publicado = 'Y' ";
         $sql .= ' ORDER BY Cursos.Nome ASC';
@@ -70,7 +70,14 @@ html_header();
                 <img  class="image" src="<?= UPLOADS_URL . $curso->Capa; ?>" alt=""/>
 
                 <ul class="ficha">
-                  <li><strong>Professor:</strong> <?= $curso->ProfessorNome; ?>.</li>
+                  <li><strong>Professor:</strong> <?= $curso->ProfessorApelido; ?>
+
+                    <?
+                    if(!empty($curso->ProfessorEmail))
+                      echo(' (<a href="mailto:' . $curso->ProfessorEmail . '">' . $curso->ProfessorEmail . '</a>)');
+                    ?>
+
+                    .</li>
                   <?
                   $total_aulas = curso_getTotalAulas($curso->ID);
                   $total_modulos = curso_getTotalModulos($curso->ID);

@@ -24,6 +24,8 @@ html_header();
               echo($_SESSION['ead_msg']);
               $_SESSION['ead_msg'] = null;
             ?></p>
+
+          <p><a href="<?= SITE_URL . 'home'; ?>">Voltar ao início</a> </p>
         </header>
 
       </div>

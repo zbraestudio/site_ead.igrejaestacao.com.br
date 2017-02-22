@@ -9,7 +9,7 @@ function mail_contato_getHtml($nome, $email, $assunto, $mensagem){
   <body style="background-color:#F5F5F5;padding: 25px;font-family: Tahoma, Geneva, sans-serif;">
   <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr>
-      <td style="background-color: #F8F8F8; border: 1px solid #EEEEEE;; background-image: url(cid:logo); background-repeat:no-repeat; background-position: 15px center; line-height:72px;padding-left: 85px; font-size:20px;color: #666666;">
+      <td style="background-color: #F8F8F8; border: 1px solid #EEEEEE;; background-image: url(cid:logo); background-repeat:no-repeat; background-position: 15px center; line-height:72px;padding-left: 175px; font-size:20px;color: #666666;">
         CONTATO
       </td>
     </tr>
@@ -18,8 +18,6 @@ function mail_contato_getHtml($nome, $email, $assunto, $mensagem){
         <p><strong>Olá ' . $nome . ', tudo bem?</strong></p>
 
         <p>Recebemos sua mensagem e assim que for possível estaremos entrando em contato com você para respondê-la.</p>
-
-        <p>Aproveite e faça perguntas no nosso QUIZ!<br>Pode fazer quantas quiser, corre lá: http://www.livresweb.com/quiz</p>
 
         <hr>
 
@@ -40,7 +38,7 @@ function mail_contato_getHtml($nome, $email, $assunto, $mensagem){
   <center>
 <span style="font-style:italic; font-size: 11px; margin-top:5px;">
 Esta é uma mensagem automática, por favor não responda este e-mail.
-Copyright 2016 LIVRE Movimento Cristão.
+Copyright 2016 IGREJA ESTAÇÃO.
 </span>
   </center>
   </body>

@@ -3,7 +3,7 @@
 <section id="footer">
   <div class="container">
     <ul class="copyright">
-      <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+      <li>&copy; Todos os direitos reservados.</li><li>Desenvolvido por <a href="http://www.zbraestudio.com.br" target="_blank">Z.BRA Estúdio</a></li>
     </ul>
   </div>
 </section>
