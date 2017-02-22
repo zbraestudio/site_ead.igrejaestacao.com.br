@@ -6,15 +6,15 @@ if( $_SERVER['HTTP_HOST'] == 'localhost'){
   define('SITE_URL'         , 'http://localhost/github/site_ead.livresweb.com/');
   define('SITE_PATH'        , 'D:/github/site_ead.livresweb.com/');
 
-  define('UPLOADS_URL'      , 'http://sistema.livresweb.com/uploads/');
-  define('UPLOADS_PATH'     , 'D:/github/site_sistema.livresweb.com/uploads/');
+  define('UPLOADS_URL'      , 'http://sistema.igrejaestacao.com.br/uploads/');
+  define('UPLOADS_PATH'     , 'D:/github/site_sistema.igrejaestacao.com.br/uploads/');
 
 } else {
-  define('SITE_URL'         , 'http://ead.livresweb.com/');
-  define('SITE_PATH'        , '/dados/http/livresweb.com/ead/');
+  define('SITE_URL'         , 'http://ead.igrejaestacao.com.br/');
+  define('SITE_PATH'        , '/dados/http/igrejaestacao.com.br/ead/');
 
-  define('UPLOADS_URL'      , 'http://sistema.livresweb.com/uploads/');
-  define('UPLOADS_PATH'     , '/dados/http/livresweb.com/sistema/uploads/');
+  define('UPLOADS_URL'      , 'http://sistema.igrejaestacao.com.br/uploads/');
+  define('UPLOADS_PATH'     , '/dados/http/igrejaestacao.com.br/sistema/uploads/');
 
 }
 
@@ -27,4 +27,4 @@ else
 
 define('DB_USER'          , 'root');
 define('DB_PASS'          , 'nwtiago');
-define('DB_DB'            , 'livresweb_com_sistema');
+define('DB_DB'            , 'igrejaestacao.com.br_sistema');

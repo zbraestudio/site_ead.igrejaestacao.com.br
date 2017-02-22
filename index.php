@@ -1,6 +1,5 @@
 <?
 include('includes/autoload.php');
-
 //se for em branco, redireciona pro /home
 if(empty($_GET['url']))
   header('LOCATION: ' . SITE_URL . 'home');
