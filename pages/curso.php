@@ -5,7 +5,7 @@ if(!log_verifyPage())
 
 
 $p = GetParamsArray();
-$sql = "SELECT * FROM Cursos WHERE  Link = '" . $p[0] . "'";
+$sql = "SELECT * FROM Cursos WHERE  Link = '" . $p[0] . "' AND Publicado = 'Y'";
 $cursos = $db->LoadObjects($sql);
 
 if(count($cursos) <= 0)
